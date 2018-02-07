@@ -1,0 +1,4 @@
+Urobte program ktorý načíta z externého súboru rodkomeň členov teamu po 4. generáciu s reálnymi dátumami narodenia a úmrtia,
+s počtom synov, dcér, vnukov, pravnukov. Program bude mať možnosť pridať novú generáciu (vašu- 5.) a bude schopný odpovedať na 
+otázku koľko vnukov a vnučiek je v rodovej línii, koľko je priemerný vek života, kto sa v rodokmeni dožil najviac a kto najmenej
+a pokúsite sa vykresliť graf ľubovolného charakteru ( asi priemerný vek dožitia). 
