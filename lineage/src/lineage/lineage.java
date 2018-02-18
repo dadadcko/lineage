@@ -20,18 +20,16 @@ import javax.swing.JFrame;
  * @author instal
  */
 public class lineage extends javax.swing.JFrame {
-    /**
-     * Creates new form lineage
-     */
+   ArrayList<String[]> action = new ArrayList<String[]>();
+   String[] pole;
     public lineage() {
         initComponents(); 
-         try {
-            ArrayList<String[]> action = new ArrayList<String[]>();
+         try {           
             FileReader fr=new FileReader(System.getProperty("user.home")+"//Desktop//rodokmen.txt");
             BufferedReader br=new BufferedReader(fr);
             String kokot=null;
             while((kokot=br.readLine()) !=null){          
-            String[] pole =kokot.split(",");
+            pole =kokot.split(",");
             //System.out.println(Arrays.toString(pole));
             action.add(pole);
             }
@@ -90,6 +88,11 @@ public class lineage extends javax.swing.JFrame {
         setResizable(false);
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton2");
 
@@ -151,7 +154,7 @@ public class lineage extends javax.swing.JFrame {
                                 .addComponent(jButton10)
                                 .addGap(226, 226, 226))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(243, 243, 243)
+                                .addGap(237, 237, 237)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jButton3)
@@ -181,7 +184,7 @@ public class lineage extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(117, 117, 117)
                         .addComponent(jButton16)))
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,6 +259,16 @@ public class lineage extends javax.swing.JFrame {
             Logger.getLogger(lineage.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+         new info().setVisible(true);
+         info.jTextField1.setText(action.get(0)[0]);
+         int age=Integer.parseInt(action.get(0)[3]) - Integer.parseInt(action.get(0)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+         info.jTextField3.setText(action.get(0)[3]);
+         info.jTextField4.setText(action.get(0)[4]);
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
