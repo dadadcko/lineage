@@ -23,37 +23,26 @@ import javax.swing.JFrame;
 public class lineage extends javax.swing.JFrame {
    ArrayList<String[]> action = new ArrayList<String[]>();
    String[] pole;
-  int age0;
-  int age1;
-  int age2;
-  int age3;
-  int age4;
-  int age5;
-  int age6;
-  int age7;
-  int age8;
-  int age9;
-  int age10;
-  int age11;
-  int age12;
-  int age13;
-  int age14;
-  
-  
-    public lineage() {
-        initComponents(); 
-        
-         try {           
-            FileReader fr=new FileReader(System.getProperty("user.home")+"//Desktop//rodokmen.txt");
+   int age;
+   int year;
+ int ageMin1=Integer.MAX_VALUE;
+  int ageMin2;
+  int ageMax1=Integer.MIN_VALUE;
+  int ageMax2;
+  int average=0;
+    public lineage(FileReader fr) {
+        initComponents();
+       
+         try {                
             BufferedReader br=new BufferedReader(fr);
-            String kokot=null;
-            while((kokot=br.readLine()) !=null){          
-            pole =kokot.split(",");
+            String savingPoint=null;
+            while((savingPoint=br.readLine()) !=null){          
+            pole =savingPoint.split(",");
             //System.out.println(Arrays.toString(pole));
             action.add(pole);
             }
             
-            System.out.println(action.get(0)[0]);
+            
              jButton1.setText(action.get(0)[0]);
             jButton2.setText(action.get(1)[0]);
              jButton3.setText(action.get(2)[0]);
@@ -69,6 +58,14 @@ public class lineage extends javax.swing.JFrame {
                        jButton13.setText(action.get(12)[0]);
                         jButton14.setText(action.get(13)[0]);
                          jButton15.setText(action.get(14)[0]);
+                         
+                         
+                          if(action.size() <=  15){
+            jButton18.setVisible(false);
+            jButton19.setVisible(false);
+            System.out.println(action.size());
+        }
+                         
             }   catch (FileNotFoundException ex) {
                     Logger.getLogger(lineage.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
@@ -100,11 +97,15 @@ public class lineage extends javax.swing.JFrame {
         jButton13 = new javax.swing.JButton();
         jButton14 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
+        jButton16 = new javax.swing.JButton();
+        jButton18 = new javax.swing.JButton();
+        jButton19 = new javax.swing.JButton();
+        jButton20 = new javax.swing.JButton();
 
         setTitle("Lineage");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        setFont(new java.awt.Font("Calibri", 0, 10)); // NOI18N
         setResizable(false);
 
         jButton1.setText("jButton1");
@@ -115,24 +116,74 @@ public class lineage extends javax.swing.JFrame {
         });
 
         jButton2.setText("jButton2");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("jButton4");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setText("jButton5");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("jButton6");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
 
         jButton7.setText("jButton7");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("jButton8");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
 
         jButton9.setText("jButton9");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
 
         jButton10.setText("jButton10");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setText("jButton11");
+        jButton11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton11ActionPerformed(evt);
+            }
+        });
 
         jButton12.setText("jButton12");
         jButton12.addActionListener(new java.awt.event.ActionListener() {
@@ -142,22 +193,50 @@ public class lineage extends javax.swing.JFrame {
         });
 
         jButton13.setText("jButton13");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setText("jButton14");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setText("jButton15");
+        jButton15.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton15ActionPerformed(evt);
+            }
+        });
 
-        jButton16.setText("jButton16");
+        jButton17.setText("Dĺžka života");
+        jButton17.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton17ActionPerformed(evt);
+            }
+        });
+
+        jButton16.setText("Close");
         jButton16.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton16ActionPerformed(evt);
             }
         });
 
-        jButton17.setText("jButton17");
-        jButton17.addActionListener(new java.awt.event.ActionListener() {
+        jButton18.setText("jButton18");
+        jButton18.setOpaque(false);
+
+        jButton19.setText("jButton19");
+        jButton19.setOpaque(false);
+
+        jButton20.setText("Pridať generáciu");
+        jButton20.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton17ActionPerformed(evt);
+                jButton20ActionPerformed(evt);
             }
         });
 
@@ -166,54 +245,64 @@ public class lineage extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(187, 187, 187)
+                .addComponent(jButton17)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton16)
+                .addGap(126, 126, 126))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(41, 41, 41)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jButton9)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jButton1)
+                                            .addGap(18, 18, 18)
+                                            .addComponent(jButton2)))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(jButton10)
+                                    .addGap(226, 226, 226))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addGap(237, 237, 237)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addComponent(jButton3)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                            .addComponent(jButton4))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jButton20)
+                                            .addComponent(jButton13)))
+                                    .addGap(32, 32, 32)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jButton5)
+                                        .addComponent(jButton14))
+                                    .addGap(16, 16, 16)))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(41, 41, 41)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton9)
+                                .addGap(373, 373, 373)
+                                .addComponent(jButton15)
+                                .addGap(68, 68, 68)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton11)
+                                    .addComponent(jButton6))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton1)
                                         .addGap(18, 18, 18)
-                                        .addComponent(jButton2)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton10)
-                                .addGap(226, 226, 226))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(231, 231, 231)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jButton12))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton3)
+                                        .addGap(34, 34, 34)
+                                        .addComponent(jButton7)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jButton4))
-                                    .addComponent(jButton13)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton17)
-                                        .addGap(83, 83, 83)))
-                                .addGap(32, 32, 32)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jButton5)
-                                    .addComponent(jButton14))
-                                .addGap(16, 16, 16)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton11)
-                            .addComponent(jButton6))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton12))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
-                                .addComponent(jButton7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jButton8))))
+                                        .addComponent(jButton8))))
+                            .addComponent(jButton18)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(373, 373, 373)
-                        .addComponent(jButton15))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
-                        .addComponent(jButton16)))
+                        .addGap(445, 445, 445)
+                        .addComponent(jButton19)))
                 .addContainerGap(252, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -240,189 +329,372 @@ public class lineage extends javax.swing.JFrame {
                     .addComponent(jButton14)
                     .addComponent(jButton13))
                 .addGap(64, 64, 64)
-                .addComponent(jButton15)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton15)
+                    .addComponent(jButton18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addComponent(jButton19)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton17)
                     .addComponent(jButton16)
-                    .addComponent(jButton17))
-                .addGap(269, 269, 269))
+                    .addComponent(jButton20))
+                .addGap(274, 274, 274))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(11)[0]);
+         if((action.get(11)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(11)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(11)[3]) - Integer.parseInt(action.get(11)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(11)[2]);
+         if(Integer.parseInt(action.get(11)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else info.jTextField4.setText(action.get(11)[3]);
+         info.jTextField5.setText(action.get(11)[4]);        // TODO add your handling code here:
     }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-         try {
-            ArrayList<String[]> action = new ArrayList<String[]>();
-            FileReader fr=new FileReader(System.getProperty("user.home")+"//Desktop//rodokmen.txt");
-            BufferedReader br=new BufferedReader(fr);
-            String kokot=null;
-            while((kokot=br.readLine()) !=null){          
-            String[] pole =kokot.split(",");
-            //System.out.println(Arrays.toString(pole));
-            action.add(pole);
-            }
-            
-            System.out.println(action.get(0)[0]);
-             jButton1.setText(action.get(0)[0]);
-            jButton2.setText(action.get(1)[0]);
-             jButton3.setText(action.get(2)[0]);
-              jButton4.setText(action.get(3)[0]);
-               jButton5.setText(action.get(4)[0]);
-                jButton6.setText(action.get(5)[0]);
-                 jButton7.setText(action.get(6)[0]);
-                  jButton8.setText(action.get(7)[0]);
-                   jButton9.setText(action.get(8)[0]);
-                    jButton10.setText(action.get(9)[0]);
-                     jButton11.setText(action.get(10)[0]);
-                      jButton12.setText(action.get(11)[0]);
-                       jButton13.setText(action.get(12)[0]);
-                        jButton14.setText(action.get(13)[0]);
-                         jButton15.setText(action.get(14)[0]);
-                         
-                      
-                   
-            
-        } catch (IOException ex) {
-            Logger.getLogger(lineage.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
          new info().setVisible(true);
          info.jTextField1.setText(action.get(0)[0]);
-         int age=Integer.parseInt(action.get(0)[3]) - Integer.parseInt(action.get(0)[2]);
+         if((action.get(0)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(0)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(0)[3]) - Integer.parseInt(action.get(0)[2]);
          info.jTextField2.setText(String.valueOf(age));
+        }       
          info.jTextField3.setText(action.get(0)[2]);
-         info.jTextField4.setText(action.get(0)[3]);
+         if(Integer.parseInt(action.get(0)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(0)[3]); 
          info.jTextField5.setText(action.get(0)[4]);
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+       new info().setVisible(true);
+         info.jTextField1.setText(action.get(1)[0]);
+         if((action.get(1)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);     
+           age=(year - (Integer.parseInt(action.get(1)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(1)[3]) - Integer.parseInt(action.get(1)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(1)[2]);
+         if(Integer.parseInt(action.get(1)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(1)[3]); 
+         info.jTextField5.setText(action.get(1)[4]);       
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+      new info().setVisible(true);
+         info.jTextField1.setText(action.get(2)[0]);
+         if((action.get(2)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);         
+           age=(year - (Integer.parseInt(action.get(2)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(2)[3]) - Integer.parseInt(action.get(2)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(2)[2]);
+         if(Integer.parseInt(action.get(2)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(2)[3]); 
+         info.jTextField5.setText(action.get(2)[4]);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(3)[0]);
+         if((action.get(3)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(3)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(3)[3]) - Integer.parseInt(action.get(3)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(3)[2]);
+         if(Integer.parseInt(action.get(3)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(3)[3]); 
+         info.jTextField5.setText(action.get(3)[4]);    
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+       new info().setVisible(true);
+         info.jTextField1.setText(action.get(4)[0]);
+         if((action.get(4)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(0)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(4)[3]) - Integer.parseInt(action.get(4)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(4)[2]);
+         if(Integer.parseInt(action.get(4)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(4)[3]); 
+         info.jTextField5.setText(action.get(4)[4]);        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+      new info().setVisible(true);
+         info.jTextField1.setText(action.get(5)[0]);
+         if((action.get(5)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(0)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(5)[3]) - Integer.parseInt(action.get(5)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(5)[2]);
+         if(Integer.parseInt(action.get(5)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(5)[3]); 
+         info.jTextField5.setText(action.get(5)[4]);
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(6)[0]);
+         if((action.get(6)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(6)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(6)[3]) - Integer.parseInt(action.get(6)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(6)[2]);
+         if(Integer.parseInt(action.get(6)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(6)[3]); 
+         info.jTextField5.setText(action.get(6)[4]);       
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(7)[0]);
+         if((action.get(7)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(7)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(7)[3]) - Integer.parseInt(action.get(7)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(7)[2]);
+         if(Integer.parseInt(action.get(7)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(7)[3]); 
+         info.jTextField5.setText(action.get(7)[4]);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        new info().setVisible(true);
+        info.jTextField1.setText(action.get(8)[0]);
+        if((action.get(8)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(8)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+        }
+        else {
+            age=Integer.parseInt(action.get(8)[3]) - Integer.parseInt(action.get(8)[2]);
+            info.jTextField2.setText(String.valueOf(age));
+        }       
+        info.jTextField3.setText(action.get(8)[2]);
+        if(Integer.parseInt(action.get(8)[3])==0)
+            info.jTextField4.setText("ešte žije");
+        else
+            info.jTextField4.setText(action.get(8)[3]); 
+        info.jTextField5.setText(action.get(8)[4]);      
+    }//GEN-LAST:event_jButton9ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(9)[0]);
+         if((action.get(9)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(9)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(9)[3]) - Integer.parseInt(action.get(9)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(9)[2]);
+         if(Integer.parseInt(action.get(9)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(9)[3]); 
+         info.jTextField5.setText(action.get(9)[4]);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(10)[0]);
+         if((action.get(10)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(10)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(10)[3]) - Integer.parseInt(action.get(10)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(10)[2]);
+         if(Integer.parseInt(action.get(10)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(10)[3]); 
+         info.jTextField5.setText(action.get(10)[4]);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(12)[0]);
+         if((action.get(12)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(12)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(12)[3]) - Integer.parseInt(action.get(12)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(12)[2]);
+         if(Integer.parseInt(action.get(12)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(12)[3]); 
+         info.jTextField5.setText(action.get(12)[4]);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(13)[0]);
+         if((action.get(13)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(13)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(13)[3]) - Integer.parseInt(action.get(13)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(13)[2]);
+         if(Integer.parseInt(action.get(13)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(13)[3]); 
+         info.jTextField5.setText(action.get(13)[4]);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+   new info().setVisible(true);
+         info.jTextField1.setText(action.get(14)[0]);
+         if((action.get(14)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(14)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(14)[3]) - Integer.parseInt(action.get(14)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(14)[2]);
+         if(Integer.parseInt(action.get(14)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(14)[3]); 
+         info.jTextField5.setText(action.get(14)[4]);        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton15ActionPerformed
+
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-       new life().setVisible(true);
-      //----------------------------------------------------------------------------------------------------------
-      if((action.get(0)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age0=(year -(Integer.parseInt(action.get(0)[2]))); 
-      }
-      else {
-          age0=Integer.parseInt(action.get(0)[3]) - Integer.parseInt(action.get(0)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-      if((action.get(1)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age1=(year -(Integer.parseInt(action.get(1)[2]))); 
-      }
-      else {
-          age1=Integer.parseInt(action.get(1)[3]) - Integer.parseInt(action.get(1)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-      if((action.get(2)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age2=(year -(Integer.parseInt(action.get(2)[2]))); 
-      }
-      else {
-          age2=Integer.parseInt(action.get(2)[3]) - Integer.parseInt(action.get(2)[2]);}
-       //----------------------------------------------------------------------------------------------------------
-      if((action.get(3)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age3=(year -(Integer.parseInt(action.get(3)[2]))); 
-      }
-      else {
-          age3=Integer.parseInt(action.get(3)[3]) - Integer.parseInt(action.get(3)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-      
-       if((action.get(4)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age4=(year -(Integer.parseInt(action.get(4)[2]))); 
-      }
-      else {
-          age4=Integer.parseInt(action.get(4)[3]) - Integer.parseInt(action.get(4)[2]);}
-       //----------------------------------------------------------------------------------------------------------
-      if((action.get(5)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age5=(year -(Integer.parseInt(action.get(5)[2]))); 
-      }
-      else {
-          age5=Integer.parseInt(action.get(5)[3]) - Integer.parseInt(action.get(5)[2]);}
-       //----------------------------------------------------------------------------------------------------------
-      if((action.get(6)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age6=(year -(Integer.parseInt(action.get(6)[2]))); 
-      }
-      else {
-          age6=Integer.parseInt(action.get(6)[3]) - Integer.parseInt(action.get(6)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-       if((action.get(7)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age7=(year -(Integer.parseInt(action.get(7)[2]))); 
-      }
-      else {
-          age7=Integer.parseInt(action.get(7)[3]) - Integer.parseInt(action.get(7)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-      if((action.get(8)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age8=(year -(Integer.parseInt(action.get(8)[2]))); 
-      }
-      else {
-          age8=Integer.parseInt(action.get(8)[3]) - Integer.parseInt(action.get(8)[2]);}
-       //----------------------------------------------------------------------------------------------------------
-      if((action.get(9)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age9=(year -(Integer.parseInt(action.get(9)[2]))); 
-      }
-      else {
-          age9=Integer.parseInt(action.get(9)[3]) - Integer.parseInt(action.get(9)[2]);}
-       //----------------------------------------------------------------------------------------------------------
-       if((action.get(10)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age10=(year -(Integer.parseInt(action.get(10)[2]))); 
-      }
-      else {
-          age10=Integer.parseInt(action.get(10)[3]) - Integer.parseInt(action.get(10)[2]);}
-       //----------------------------------------------------------------------------------------------------------
-        if((action.get(11)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age11=(year -(Integer.parseInt(action.get(11)[2]))); 
-      }
-      else {
-          age11=Integer.parseInt(action.get(11)[3]) - Integer.parseInt(action.get(11)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-       if((action.get(12)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age12=(year -(Integer.parseInt(action.get(12)[2]))); 
-      }
-      else {
-          age12=Integer.parseInt(action.get(12)[3]) - Integer.parseInt(action.get(12)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-       if((action.get(13)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age13=(year -(Integer.parseInt(action.get(13)[2]))); 
-      }
-      else {
-          age13=Integer.parseInt(action.get(13)[3]) - Integer.parseInt(action.get(13)[2]);}
-      //----------------------------------------------------------------------------------------------------------
-       if((action.get(14)[3]).equals(String.valueOf(0))){
-          int year=Calendar.getInstance().get(Calendar.YEAR);
-         age14=(year -(Integer.parseInt(action.get(14)[2]))); 
-      }
-      else {
-          age14=Integer.parseInt(action.get(14)[3]) - Integer.parseInt(action.get(14)[2]);}
-      
-      
-      
-      
-      
-      
-    
-     int maxNum=Math.max(age0, Math.max( age1, Math.max(age2,Math.max(age3,Math.max(age4,Math.max(age5,Math.max(age6,Math.max(age7,Math.max(age8,Math.max(age9,Math.max(age10,Math.max(age11,Math.max(age12,Math.max(age13,age14))))))))))) )));
-     int minNum=Math.min(age0, Math.min( age1, Math.min(age2,Math.min(age3,Math.min(age4,Math.min(age5,Math.min(age6,Math.min(age7,Math.min(age8,Math.min(age9,Math.min(age10,Math.min(age11,Math.min(age12,Math.min(age13,age14))))))))))) )));
-       
-     life.jTextField3.setText(String.valueOf(maxNum));
-     life.jTextField4.setText(String.valueOf(minNum));
+        new life().setVisible(true);
+
+        for(int i=0;i<action.size();i++){
+            if((action.get(i)[3]).equals(String.valueOf(0))){
+                year=Calendar.getInstance().get(Calendar.YEAR);
+                ageMax2=(year -(Integer.parseInt(action.get(i)[2])));
+                ageMax1=Math.max(ageMax2, ageMax1);
+            }
+            else {
+                ageMax2=Integer.parseInt(action.get(i)[3]) - Integer.parseInt(action.get(i)[2]);}
+            ageMax1=Math.max(ageMax2, ageMax1);
+            average=ageMax2+average;
+        }
+
+        for(int i=0;i<action.size();i++){
+            if((Integer.parseInt(action.get(i)[3])) !=0){
+                ageMin2= (Integer.parseInt(action.get(i)[3]) - Integer.parseInt(action.get(i)[2]));
+                ageMin1= Math.min(ageMin2, ageMin1);
+            }
+        }
+
+        for(int i=0;i<action.size();i++){
+            if((Integer.parseInt(action.get(i)[3])- Integer.parseInt(action.get(i)[2]))==ageMax1){
+                String longest=action.get(i)[0];
+                life.jTextField1.setText(longest);
+                life.jTextField3.setText(String.valueOf(ageMax1) + " rokov");
+            }
+        }
+
+        for(int i=0;i<action.size();i++){
+            if((Integer.parseInt(action.get(i)[3]) !=0)  & (Integer.parseInt(action.get(i)[3])- Integer.parseInt(action.get(i)[2]))==ageMin1){
+                String shortest=action.get(i)[0];
+                life.jTextField2.setText(shortest);
+                life.jTextField4.setText(String.valueOf(ageMin1) + " rokov");
+            }
+        }
+
+        int averageFinal= (average / action.size());
+        life.jTextField5.setText(String.valueOf(averageFinal) + " rokov");
+
     }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        dispose();        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+     new generation().setVisible(true);
+    }//GEN-LAST:event_jButton20ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -454,7 +726,7 @@ public class lineage extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new lineage().setResizable(false); 
+               // new lineage().setResizable(false); 
             }     
         });
     }
@@ -469,7 +741,10 @@ public class lineage extends javax.swing.JFrame {
     private static javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
+    private javax.swing.JButton jButton18;
+    private javax.swing.JButton jButton19;
     private static javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton20;
     private static javax.swing.JButton jButton3;
     private static javax.swing.JButton jButton4;
     private static javax.swing.JButton jButton5;
