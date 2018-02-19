@@ -1,0 +1,15 @@
+Milada Loydová,11,1914,2013,2
+Jaroslav Loyda,11,1920,1981,
+Anna Sedláková,12,1956,2001,
+Rudolf Sedlák,12,1967,2010,
+Jozef Martinka,13,1905,1995,
+Alžbeta Martinková,13,1905,1999,
+Ján Kriška,14,1897,1970,
+Irena Krišková,14,1912,2008,
+Pavol Kriška,21,1942,0,
+Anna Krišková,21,1945,0,
+Rudolf Sedlák,22,1935,2014
+Jaroslava Sedlákova,22,1940,0,
+Margaréta Sedláková,31,1972,0,
+Daniel Sedlák,31,1973,0,
+Radek Sedlák,41,2000,0,
