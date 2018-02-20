@@ -131,7 +131,7 @@ public class generation extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
-                                .addGap(78, 78, 78)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -139,7 +139,7 @@ public class generation extends javax.swing.JFrame {
                                         .addComponent(jLabel4)
                                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING))
                                     .addComponent(jLabel2))
-                                .addGap(18, 18, 18)
+                                .addGap(18, 18, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -153,32 +153,31 @@ public class generation extends javax.swing.JFrame {
                 .addGap(156, 156, 156)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(46, 46, 46)
-                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
-                                .addGap(36, 36, 36)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(36, 36, 36)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGap(60, 60, 60)
                                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jLabel8)
                                 .addGap(18, 18, 18)
                                 .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(20, Short.MAX_VALUE))))
+                        .addContainerGap(21, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGap(492, 492, 492)
                 .addComponent(jLabel10)
@@ -251,13 +250,13 @@ public class generation extends javax.swing.JFrame {
             FileWriter fw=new FileWriter(System.getProperty("user.home")+Gui.filepath,true);    
             BufferedWriter bw=new BufferedWriter(fw);
             PrintWriter out=new PrintWriter(bw);       
-          if(jTextField1.getText() !="" && jTextField2.getText() !="" && jTextField3.getText() !="" && jTextField4.getText() !="" && jTextField5.getText() !="" && jTextField6.getText() !="" && jTextField7.getText() !="" && jTextField8.getText() !=""){     
+          if(!"".equals(jTextField1.getText()) && !"".equals(jTextField2.getText()) && !"".equals(jTextField3.getText()) && !"".equals(jTextField4.getText()) && !"".equals(jTextField5.getText()) && !"".equals(jTextField6.getText()) && !"".equals(jTextField7.getText()) && !"".equals(jTextField8.getText())){     
                 prechodneUlozisko1=jTextField1.getText();
                 System.out.println(prechodneUlozisko1);
                 prechodneUlozisko2=jTextField2.getText();
                 prechodneUlozisko3=jTextField3.getText();
                 prechodneUlozisko4=jTextField4.getText();             
-               String uloziskofinal=prechodneUlozisko1 + "," + "51" +"," +prechodneUlozisko2 +"," + prechodneUlozisko3 + "," + prechodneUlozisko4;
+               String uloziskofinal=prechodneUlozisko1 + "," + "41" +"," +prechodneUlozisko2 +"," + prechodneUlozisko3 + "," + prechodneUlozisko4;
                out.println();
                 System.out.println(uloziskofinal);
               //fw.write(uloziskofinal);
@@ -271,25 +270,13 @@ public class generation extends javax.swing.JFrame {
                 System.out.println(uloziskofinal);
               //fw.write(uloziskofinal);
                out.println(uloziskofinal);
-               out.flush();
-               out.close();
-           }
-          
-          else if(jTextField1.getText() !="" && jTextField6.getText() !="" && jTextField7.getText() !="" && jTextField8.getText() !=""){
-                prechodneUlozisko1=jTextField1.getText();
-                prechodneUlozisko2=jTextField2.getText();
-                prechodneUlozisko3=jTextField3.getText();
-                prechodneUlozisko4=jTextField4.getText();             
-               String uloziskofinal=prechodneUlozisko1 + "," + "51"+","+prechodneUlozisko2 +"," + prechodneUlozisko3 + "," + prechodneUlozisko4;
-                System.out.println(uloziskofinal);
-              //fw.write(uloziskofinal);
-               out.println(uloziskofinal);
-               out.flush();
-               out.close();
-           }
+               out.flush();    
+               dispose();          
+           }      
           else {         
-               JOptionPane.showMessageDialog(null,"Chybne zadané alebo nevyplnené úplne všetky údaje");
+               JOptionPane.showMessageDialog(null,"Chybne zadané alebo nevyplnené všetky údaje");
         }
+          out.close();
         
           
           

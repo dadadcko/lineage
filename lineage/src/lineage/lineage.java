@@ -61,11 +61,16 @@ public class lineage extends javax.swing.JFrame {
                          
                          
                           if(action.size() <=  15){
-            jButton18.setVisible(false);
-            jButton19.setVisible(false);
-            System.out.println(action.size());
+                                jButton18.setVisible(false);
+                                jButton19.setVisible(false);
+                                System.out.println(action.size());
         }
-                         
+                          if(action.size() >  15){
+                                jButton18.setVisible(true);
+                                jButton19.setVisible(true);
+                                jButton18.setText(action.get(15)[0]);
+                                jButton19.setText(action.get(16)[0]);
+                          }         
             }   catch (FileNotFoundException ex) {
                     Logger.getLogger(lineage.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
@@ -104,6 +109,7 @@ public class lineage extends javax.swing.JFrame {
         jButton20 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jButton21 = new javax.swing.JButton();
 
         setTitle("Lineage");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -231,9 +237,19 @@ public class lineage extends javax.swing.JFrame {
 
         jButton18.setText("jButton18");
         jButton18.setOpaque(false);
+        jButton18.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton18ActionPerformed(evt);
+            }
+        });
 
         jButton19.setText("jButton19");
         jButton19.setOpaque(false);
+        jButton19.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton19ActionPerformed(evt);
+            }
+        });
 
         jButton20.setText("Pridať generáciu");
         jButton20.addActionListener(new java.awt.event.ActionListener() {
@@ -245,6 +261,13 @@ public class lineage extends javax.swing.JFrame {
         jLabel1.setText("Mamina Strana");
 
         jLabel2.setText("Otcova Strana");
+
+        jButton21.setText("Reload");
+        jButton21.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton21ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -267,14 +290,6 @@ public class lineage extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(24, 24, 24))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(270, 270, 270)
                 .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -282,28 +297,44 @@ public class lineage extends javax.swing.JFrame {
                 .addGap(255, 255, 255))
             .addGroup(layout.createSequentialGroup()
                 .addGap(704, 704, 704)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(84, 84, 84)
-                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(230, 230, 230)
-                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(425, 425, 425)
-                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 204, Short.MAX_VALUE)
-                .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(80, 80, 80))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(302, 302, 302)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(270, 270, 270))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(686, 686, 686))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(230, 230, 230)
+                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(838, 838, 838)
+                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(425, 425, 425)
+                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton9, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(82, 82, 82))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -324,18 +355,18 @@ public class lineage extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jButton11)
-                                    .addComponent(jButton10)))
+                                    .addComponent(jButton10)
+                                    .addComponent(jButton9)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(81, 81, 81)
-                                .addComponent(jButton12))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jButton12)
+                                    .addComponent(jButton11)))))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jLabel1))
-                        .addGap(125, 125, 125)
-                        .addComponent(jButton9)))
+                            .addComponent(jLabel1))))
                 .addGap(99, 99, 99)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton14)
@@ -344,13 +375,15 @@ public class lineage extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton15)
                     .addComponent(jButton18))
-                .addGap(59, 59, 59)
+                .addGap(55, 55, 55)
                 .addComponent(jButton19)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 194, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
 
@@ -708,6 +741,86 @@ public class lineage extends javax.swing.JFrame {
      new generation().setVisible(true);
     }//GEN-LAST:event_jButton20ActionPerformed
 
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+      new info().setVisible(true);
+         info.jTextField1.setText(action.get(15)[0]);
+         if((action.get(15)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(15)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(15)[3]) - Integer.parseInt(action.get(15)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(15)[2]);
+         if(Integer.parseInt(action.get(15)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(15)[3]); 
+         info.jTextField5.setText(action.get(15)[4]); 
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+ new info().setVisible(true);
+         info.jTextField1.setText(action.get(16)[0]);
+         if((action.get(16)[3]).equals(String.valueOf(0))){
+           int year = Calendar.getInstance().get(Calendar.YEAR);   
+           age=(year - (Integer.parseInt(action.get(14)[2])));
+           info.jTextField2.setText(String.valueOf(age));
+         }
+        else {
+         age=Integer.parseInt(action.get(16)[3]) - Integer.parseInt(action.get(16)[2]);
+         info.jTextField2.setText(String.valueOf(age));
+        }       
+         info.jTextField3.setText(action.get(16)[2]);
+         if(Integer.parseInt(action.get(16)[3])==0)
+         info.jTextField4.setText("ešte žije");
+         else
+         info.jTextField4.setText(action.get(16)[3]); 
+         info.jTextField5.setText(action.get(16)[4]);         // TODO add your handling code here:
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        action.clear();
+         try {    
+             FileReader fr=new FileReader(System.getProperty("user.home")+Gui.filepath);
+            BufferedReader br=new BufferedReader(fr);
+            String savingPoint=null;
+            while((savingPoint=br.readLine()) !=null){          
+            pole =savingPoint.split(",");
+            //System.out.println(Arrays.toString(pole));
+            action.add(pole);
+            
+           }
+         } catch (IOException ex) {
+           Logger.getLogger(lineage.class.getName()).log(Level.SEVERE, null, ex);
+       }
+        
+        jButton1.setText(action.get(0)[0]);
+        jButton2.setText(action.get(1)[0]);
+        jButton3.setText(action.get(2)[0]);
+        jButton4.setText(action.get(3)[0]);
+        jButton5.setText(action.get(4)[0]);
+        jButton6.setText(action.get(5)[0]);
+        jButton7.setText(action.get(6)[0]);
+        jButton8.setText(action.get(7)[0]);
+        jButton9.setText(action.get(8)[0]);
+        jButton10.setText(action.get(9)[0]);
+        jButton11.setText(action.get(10)[0]);
+        jButton12.setText(action.get(11)[0]);
+        jButton13.setText(action.get(12)[0]);
+        jButton14.setText(action.get(13)[0]);
+        jButton15.setText(action.get(14)[0]);
+        if(action.size() > 15){
+            jButton18.setText(action.get(15)[0]);
+            jButton19.setText(action.get(16)[0]);
+            jButton18.setVisible(true);
+            jButton19.setVisible(true);
+        }
+        
+    }//GEN-LAST:event_jButton21ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -757,6 +870,7 @@ public class lineage extends javax.swing.JFrame {
     private javax.swing.JButton jButton19;
     private static javax.swing.JButton jButton2;
     private javax.swing.JButton jButton20;
+    private javax.swing.JButton jButton21;
     private static javax.swing.JButton jButton3;
     private static javax.swing.JButton jButton4;
     private static javax.swing.JButton jButton5;

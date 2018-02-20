@@ -109,7 +109,7 @@ public class Gui extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
  try {
-            filepath="//Documents//NetBeansProjects//lineage//Assets//lineageDano.txt";
+            filepath="//Desktop//lineage//Assets//lineageDano.dat";
             FileReader fr=new FileReader(System.getProperty("user.home")+filepath);
             new lineage(fr).setVisible(true);
         } catch (FileNotFoundException ex) {
@@ -119,7 +119,7 @@ public class Gui extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        try {
-           filepath="//Documents//NetBeansProjects//lineage//Assets//lineageRadek.txt";
+           filepath="//Desktop//lineage//Assets//lineageRadek.dat";
             FileReader fr=new FileReader(System.getProperty("user.home")+filepath);
             new lineage(fr).setVisible(true);
         } catch (FileNotFoundException ex) {
